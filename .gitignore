@@ -1,0 +1,172 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+.env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# PyCharm project files
+.idea/
+
+# VSCode project files
+.vscode/
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Environment variables
+.env
+.env.*
+
+# Machine learning / deep learning artifacts
+*.h5
+*.hdf5
+*.ckpt
+*.pth
+*.pt
+*.onnx
+*.joblib
+*.pkl
+*.model
+*.weights
+
+# TensorBoard log files
+logs/
+events.out.tfevents.*
+
+# NLP / GenAI specific files
+*.spacy
+*.bin
+*.vec
+*.jsonl
+*.bpe
+*.merges
+*.vocab
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.orig
+
+# Data files
+*.csv
+*.tsv
+*.json
+*.parquet
+*.feather
+*.xls
+*.xlsx
+*.pickle
+*.zip
+*.tar.gz
+*.7z
+*.rar
+*.npy
+*.npz
+
+# Images and datasets
+*.png
+*.jpg
+*.jpeg
+*.bmp
+*.gif
+*.tiff
+*.webp
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.wav
+*.mp3
+*.ogg
+*.flac
+*.dataset
+*.tar
+*.gz
+
+# Compiled language files
+*.c
+*.cpp
+*.o
+*.out
+*.class
+*.jar
+*.war
+*.ear
+*.exe
+*.dll
+*.obj
+*.lib
+*.a
+*.lo
+*.la
+*.dex
+*.apk
+*.ipa
+*.dSYM/
+*.deb
+*.dmg
+*.pkg
+*.rpm
+*.msi
+*.iso
+*.swf
+*.swc
+*.xap
+*.xcodeproj/
+*.xcworkspace/
+*.xcuserstate
+*.xcuserdata/
+*.xcsettings/
+*.xcconfig/
+*.xcworkspacedata/
+*.xcshareddata/
+*.xcuserdatad/
+*.xcscmblueprint/
+*.xcscheme/
+*.xcschememanagement.plist
+*.xcschememanagement/

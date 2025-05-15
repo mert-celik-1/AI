@@ -1,0 +1,18 @@
+Supervised Learning (Denetimli Öğrenme): Regresyon(Regression), Sınıflandırma (Classification)
+Unsupervised Learning (Denetimsiz Öğrenme): Kümeleme(Clustering) , Boyut İndirgeme (Dimensionality Reduction)
+Reinforcement Learning (Pekiştirmeli Öğrenme): Agent
+
+Supervised Learning:
+
+Makine öğrenmesinde bir algoritmanın, girdi verileriyle birlikte doğru çıktıları (etiketleri) gördüğü ve bu örneklerden öğrenerek yeni, görülmemiş veriler için tahmin yapmayı öğrendiği bir yöntemdir.
+Veri seti şu şekilde olur:
+Girdi (X) → Özellikler (örneğin yaş, kilo, boy)
+Çıktı (y) → Etiket (örneğin hastalık var mı, ev fiyatı ne)
+
+Amaç:
+Bu girdi-çıktı ilişkisine bakarak, algoritmanın doğru sonuçları tahmin edecek bir model öğrenmesidir.
+Supervised learning’in iki temel alt türü vardır:
+
+-Sınıflandırma (Classification): Çıktı kategoriktir (örneğin: evet/hayır, kırmızı/mavi/yeşil)
+-Regresyon (Regression): Çıktı sürekli bir değerdir (örneğin: sıcaklık,fiyat)
+

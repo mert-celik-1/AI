@@ -1,0 +1,38 @@
+1) Linear Regression :
+Doğrusal regresyon, bağımlı ve bağımsız değişkenler arasındaki doğrusal ilişkiyi modellemek için kullanılan bir tekniktir. Model, en küçük kareler yöntemi ile
+doğrusal bir fonksiyon oluşturur. Bu fonksiyon, bağımsız değişkenlerin (özelliklerin) ağırlıklı toplamı ile bağımlı değişkenin (sonucun) tahmin edilmesini sağlar.
+Doğrusal regresyon, sürekli bir hedef değişkeni tahmin etmek için kullanılır. Örneğin, bir evin fiyatını tahmin etmek için evin büyüklüğü, konumu gibi özellikleri kullanabiliriz.
+Doğrusal regresyon, basit ve yorumlanabilir bir modeldir. Ancak, doğrusal olmayan ilişkileri modellemek için yeterli olmayabilir. Ayrıca, çoklu doğrusal bağlantı (multicollinearity) gibi sorunlarla karşılaşabiliriz.
+Örnek olarak artan sıcaklığa göre satılan dondurma sayısında artış gözlemlenmesi denilebilir.
+
+2) Decision Tree Regression
+Hedef değişkeni tahmin etmek için veriyi tekrarlı bir şekilde bölen, ağaç benzeri bir yapıya sahip bir makine öğrenmesi algoritmasıdır.
+"Ağaç" benzetmesi, algoritmanın karar verme sürecinin, bir kökten başlayıp dallara ayrılan ağaç yapısını anımsatmasından gelir. Kolay anlaşılabilirlik, doğrusal olmayan ilişkileri yakalama, otomatik özellik seçimi güçlü yanlarındandır.
+Aşırı öğrenme eğilimi, kararsızlık, zayıf genelleme kabiliyeti zayıf yönlerindendir.
+X[Gelir] <= 5.5
+├── Evet: X[Oda Sayısı] <= 6.1
+│   ├── Evet: Tahmin = 2.3 (ev fiyatı)
+│   └── Hayır: Tahmin = 3.7 (ev fiyatı)
+└── Hayır: X[Konum Puanı] <= 8.2
+    ├── Evet: Tahmin = 4.1 (ev fiyatı)
+    └── Hayır: Tahmin = 5.8 (ev fiyatı)
+
+
+3) Random Forest Regression
+Random Forest, birden çok karar ağacının sonuçlarını birleştiren güçlü bir topluluk (ensemble) öğrenme algoritmasıdır. Regresyon problemlerinde, bireysel ağaçların tahminlerinin ortalaması alınarak sonuç üretilir.
+Temel çalışma prensibi, algoritma her biri biraz farklı olan yüzlerce veya binlerce karar ağacı oluşturur. Her ağaç orijinal veri setinden rastgele örnekleme ile oluşturulan farklı bir eğitim seti kullanır.(Bagging)
+Her düğümde tüm özellikler yerine rastgele seçilen bir alt küme değerlendirilir. Regresyon problemlerinde, tüm ağaçların tahminlerinin ortalaması alınır. Yüksek doğruluk, aşırı öğrenmeye karşı direnç, doğrusal olmayan
+ilişkileri yakalama, özellik önem derecesi güçlü yanlarıdır. Çok sayıda ağaç eğitmek zaman alabilir. Tek bir karar ağacına gçre karmaşık ve yorumlaması zordur. Finansal tahminler, gayrimenkul fiyat tahmini, hava durumu tahmini gibi örneklendirilebilir.
+Kısaca farklı bakış açılarını birleştirir ve daha dengeli, doğru bir tahmin verir.
+
+
+
+
+ Regresyon Algoritmaları Metrikleri:
+    1) Ortalama Mutlak Hata (MAE): Tahmin edilen değerler ile gerçek değerler arasındaki mutlak farkların ortalamasını alır. Ne kadar azsa, model o kadar iyidir. Her hata eşit ağırlık taşır.
+    2) Ortalama Kare Hatası (MSE): Tahmin edilen değerler ile gerçek değerler arasındaki farkların karesinin ortalamasını alır. Ne kadar azsa, model o kadar iyidir. Büyük hatalara daha fazla ağırlık verir.
+    3) R-kare (R-squared): Modelin veriyi ne kadar iyi açıkladığını gösterir. 1'e yakın değerler, modelin veriyi iyi açıkladığını gösterir.
+
+    MAE yüksek MSE düşükse modelin tahminleri çok iyi değil ama büyük hatalar yapmıyor demektir.
+    MSE yüksek MAE düşükse az sayıda büyük hata yapıyor demektir.
+
