@@ -16,3 +16,14 @@ Supervised learning’in iki temel alt türü vardır:
 -Sınıflandırma (Classification): Çıktı kategoriktir (örneğin: evet/hayır, kırmızı/mavi/yeşil)
 -Regresyon (Regression): Çıktı sürekli bir değerdir (örneğin: sıcaklık,fiyat)
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+-StandardScaler : Özelliklerin ortalamasını 0, standart sapmasını 1 olacak şekilde ölçeklendirir. Bu, özelliklerin aynı ölçek üzerinde olmasını sağlar ve
+bazı algoritmaların daha iyi performans göstermesine yardımcı olur. Linear regression, logistic regression, svm, knn, pca, neural network(mlp,tensorflow,keras)
+gibi algoritmalar için önemlidir. Decision tree, random forest, xgboost gibi algoritmalar için gerekli değildir.
+
+-Cross Validation: Modelin genelleme yeteneğini değerlendirmek için kullanılır. Veri setini k katmana böler ve her katmanı test seti olarak kullanarak modelin performansını değerlendirir.
+Modelin overfitting yapıp yapmadığını anlamak için önemlidir. Genellikle k=5 veya k=10 kullanılır. K-fold cross validation, stratified k-fold cross validation gibi türleri vardır. K-fold cross validation, veri setini k katmana böler ve
+her katmanı test seti olarak kullanarak modelin performansını değerlendirir. Veri seti K parçaya bölünür. Her seferinde 1 parça test verisi geri kalan K-1 parça eğitim verisi olarak kullanılır. Bu işlem K kez tekrarlanır ve her seferinde farklı bir parça test verisi olur.
+Sonuçta K tane doğruluk skoru elde edilir ve bunların ortalaması alınır. Performans ölçümünde daha güvenilir sonuç verir. Veriyi daha verimli kullanır. Hesaplama maliyeti yüksektir. Eğitim süresi artar.
