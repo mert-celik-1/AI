@@ -1,9 +1,11 @@
 from dotenv import load_dotenv
 import os
-from agents import Agent, Runner, trace, function_tool
+from agents import Agent, Runner, trace, function_tool, GuardrailFunctionOutput, input_guardrail
 import asyncio
 import smtplib
 from email.message import EmailMessage
+
+from pydantic.v1 import BaseModel
 
 load_dotenv(override=True)
 
@@ -167,6 +169,34 @@ handoff_sales_manager = Agent(
     model="gpt-4o-mini"
 )
 
+from pydantic import BaseModel
+
+class NameCheckOutput(BaseModel):
+    is_name_in_message: bool
+    name: str
+
+
+guardrail_agent = Agent(
+    name="Name check",
+    instructions="Check if the user is including someone's personal name in what they want you to do.",
+    output_type=NameCheckOutput,
+    model="gpt-4o-mini"
+)
+
+@input_guardrail
+async def guardrail_against_name(ctx,agent,message):
+    result = await Runner.run(guardrail_agent,message,context=ctx.context)
+    is_name_in_message = result.final_output.is_name_in_message
+    return GuardrailFunctionOutput(output_info={"found_name":result.final_output},tripwire_triggered=is_name_in_message)
+
+careful_sales_manager = Agent(
+    name="Handoff Sales Manager With Guardrails",
+    instructions=handoff_manager_instructions,
+    tools=sales_tools,
+    handoffs=[emailer_agent],
+    model="gpt-4o-mini",
+    input_guardrails=[guardrail_against_name]
+    )
 
 # ----- ÇALIŞTIRMA FONKSİYONLARI -----
 
@@ -188,17 +218,29 @@ async def run_handoff_approach():
         print(result)
 
 
+async def run_handoff_guardrail_approach():
+    """Handoff ve Guardrail yaklaşımını çalıştırır (kontrol devredilir)"""
+    message = "Send out a cold sales email addressed to Dear CEO from Alice"
+    with trace('Handoff With Guardrail Sales Manager'):
+        result = await Runner.run(careful_sales_manager, message)
+        print("\n--- HANDOFF & GUARDRAIL APPROACH RESULT ---")
+        print(result)
+
+
 # ----- MAIN FONKSİYON -----
 
 async def main():
 
-    approach = "handoff"
+    approach = "guardrail"
 
-    if approach == "direct" or approach == "both":
+    if approach == "direct" or approach == "all":
         await run_direct_approach()
 
-    if approach == "handoff" or approach == "both":
+    if approach == "handoff" or approach == "all":
         await run_handoff_approach()
+
+    if approach == "guardrail" or approach == "all":
+        await run_handoff_guardrail_approach()
 
 
 if __name__ == "__main__":
