@@ -192,7 +192,7 @@ async def run_handoff_approach():
 
 async def main():
 
-    approach = "both"
+    approach = "handoff"
 
     if approach == "direct" or approach == "both":
         await run_direct_approach()
