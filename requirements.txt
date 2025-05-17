@@ -1,5 +1,11 @@
+# ML
 pandas
 numpy
 scikit-learn
 seaborn
 matplotlib
+# GenAI
+python-dotenv
+gradio
+openai
+openai-agents
