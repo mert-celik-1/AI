@@ -9,6 +9,10 @@ python-dotenv
 gradio
 openai
 openai-agents
+langchain
+langchain-openai
+langchain_community
+chromadb
 
 # NLP
 transformers
@@ -16,3 +20,5 @@ torch
 datasets
 
 fastapi
+pypdf
+beautifulsoup4
