@@ -149,6 +149,7 @@ events.out.tfevents.*
 *.ipa
 *.dSYM/
 *.deb
+*.pem
 *.dmg
 *.pkg
 *.rpm
@@ -170,3 +171,4 @@ events.out.tfevents.*
 *.xcscheme/
 *.xcschememanagement.plist
 *.xcschememanagement/
+
