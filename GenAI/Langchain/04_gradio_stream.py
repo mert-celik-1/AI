@@ -123,8 +123,3 @@ with gr.Blocks(title="RAG Sohbet Asistanı") as demo:
 
 demo.queue()
 demo.launch(share=False)
-
-"""
-RAG yerine Agentic RAG veya Tool-Use eklemek.
-Agent
-"""
